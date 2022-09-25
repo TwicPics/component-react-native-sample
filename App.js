@@ -1,20 +1,45 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { Component } from 'react';
 
-export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
-}
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+//import {installTwicPics} from '@twicpics/components-react-native';
+import Gallery from './pages/Gallery.js';
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
+import installTwicPics from './src/_/install.js';
+import Basic from './pages/Basic.js';
+import Home from './pages/Home.js';
+import List from './pages/List.js';
+import Single from './pages/Single.js';
+
+installTwicPics({
+    domain: `https://demo.twic.pics`,
+    step: 100,
+    debug: false
 });
+
+const Stack = createNativeStackNavigator();
+
+class App extends Component {
+    render() {
+        return (
+            <NavigationContainer>
+                <Stack.Navigator>
+                    <Stack.Screen name="Home" component={Home} options={{ title: 'Home' }} />
+                    <Stack.Screen name="Single" component={Single} options={{ title: 'Single' }} />
+                    <Stack.Screen name="Basic" component={Basic} options={{ title: 'Basic' }} />
+                    <Stack.Screen
+                        name="Gallery"
+                        component={Gallery}
+                        options={{ title: 'Gallery' }}
+                    />
+                    <Stack.Screen
+                        name="Flatlist"
+                        component={List}
+                        options={{ title: 'Flatlist' }}
+                    />
+                </Stack.Navigator>
+            </NavigationContainer>
+        );
+    }
+}
+export default App;
