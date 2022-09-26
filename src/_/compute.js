@@ -68,8 +68,8 @@ export const computeSrc = (anchor, focus, mode = `cover`, preTransform = ``, siz
 };
 
 export const computeStyle = (value, ratio) => {
-    if (ratio && value) {
-        let tmp = value;
+    if (ratio) {
+        let tmp = value || {};
         if (Array.isArray(value)) {
             tmp = value.reduce((p, c) => {
                 return { ...p, ...c };
@@ -77,6 +77,7 @@ export const computeStyle = (value, ratio) => {
         }
         tmp = JSON.parse(JSON.stringify(tmp));
         tmp.height = undefined;
+        tmp.aspectRatio = 1 / ratio;
         return tmp;
     }
     return value;

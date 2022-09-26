@@ -1,6 +1,6 @@
 import { SafeAreaView, StatusBar, View, FlatList, StyleSheet } from 'react-native';
-import TwicImg from '../components/TwicImg.js';
-//import {TwicImg} from '@twicpics/components-react-native';
+//import TwicImg from '../components/TwicImg.js';
+import {TwicImg} from '@twicpics/components-react-native';
 
 const seed = [
     {

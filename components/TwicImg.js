@@ -50,7 +50,7 @@ const TwicWrapper = (props) => {
                 {config.debug && (
                     <View style={styles.debug}>
                         <Text>
-                            Debug {width} {height} - {computedSrc} - {JSON.stringify(props)}
+                            {width} {height} - {computedSrc}
                         </Text>
                     </View>
                 )}
@@ -65,30 +65,27 @@ export default class TwicImg extends Component {
         super(props);
         this.state = {
             width: null,
-            height: null,
-        }
+            height: null
+        };
     }
     render() {
         const { props } = this;
         const ratio = parseRatio(props.ratio);
         const style = computeStyle(props.style, ratio);
-        console.log("x",ratio, style);
         return (
             <View
                 style={StyleSheet.flatten([styles.layout, style])}
-                onLayout={ (event) =>
-                    {
-                        console.log("onLayout");
-                        let {x, y, width, height} = event.nativeEvent.layout;
-                        console.log(x, y, width, height);
-                        this.setState({
-                            width: width,
-                            height: height,
-                            x: x,
-                            y: y
-                        })
-                    }
-                }
+                onLayout={(event) => {
+                    console.log('onLayout');
+                    let { x, y, width, height } = event.nativeEvent.layout;
+                    console.log(x, y, width, height);
+                    this.setState({
+                        width: width,
+                        height: height,
+                        x: x,
+                        y: y
+                    });
+                }}
             >
                 <TwicWrapper {...props} width={this.state.width} height={this.state.height} />
             </View>
@@ -97,13 +94,6 @@ export default class TwicImg extends Component {
 }
 
 const styles = StyleSheet.create({
-    wrapper: {
-        overflow: `hidden`
-    },
-    layout: {
-        overflow: `hidden`,
-        width: '100%'
-    },
     debug: {
         width: '100%',
         position: 'absolute',
@@ -112,6 +102,17 @@ const styles = StyleSheet.create({
     img: {
         width: '100%',
         height: '100%',
-        position: ''
+        position: 'absolute',
+        top: 0
+    },
+    layout: {
+        overflow: `hidden`,
+        width: '100%',
+
+        backgroundColor: '#FF0000'
+    },
+    wrapper: {
+        overflow: `hidden`,
+        width: '100%'
     }
 });

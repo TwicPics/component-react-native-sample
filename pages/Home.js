@@ -1,5 +1,4 @@
 import { Button, StyleSheet, View } from 'react-native';
-//import {Header} from '@twicpics/components-react-native';
 
 const Divider = () => {
     return <View style={styles.divider} />;
@@ -7,13 +6,19 @@ const Divider = () => {
 const Home = ({ navigation }) => {
     return (
         <View style={styles.container}>
-            <Button title="Go to Single" onPress={() => navigation.navigate('Single')} />
+            <Button title="Basic" onPress={() => navigation.navigate('Basic')} />
             <Divider />
-            <Button title="Go to Basic" onPress={() => navigation.navigate('Basic')} />
+            <Button title="Gallery" onPress={() => navigation.navigate('Gallery')} />
             <Divider />
-            <Button title="Go to Gallery" onPress={() => navigation.navigate('Gallery')} />
+            <Button title="Flatlist" onPress={() => navigation.navigate('Flatlist')} />
             <Divider />
-            <Button title="Go to Flatlist" onPress={() => navigation.navigate('Flatlist')} />
+            <Button title="Focus" onPress={() => navigation.navigate('Focus')} />
+            <Divider />
+            <Button title="Mode" onPress={() => navigation.navigate('Mode')} />
+            <Divider />
+            <Button title="Ratio" onPress={() => navigation.navigate('Ratio')} />
+            <Divider />
+            <Button title="Transform" onPress={() => navigation.navigate('Transform')} />
             <Divider />
         </View>
     );

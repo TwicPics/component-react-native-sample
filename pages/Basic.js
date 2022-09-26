@@ -1,6 +1,6 @@
-import { ScrollView, StyleSheet, View } from 'react-native';
-import TwicImg from '../components/TwicImg.js';
-//import {TwicImg} from '@twicpics/components-react-native';
+import { ScrollView, StyleSheet, Text, View } from 'react-native';
+//import TwicImg from '../components/TwicImg.js';
+import {TwicImg} from '@twicpics/components-react-native';
 
 const Basic = () => {
     return (
@@ -8,12 +8,8 @@ const Basic = () => {
             <ScrollView>
                 <View style={styles.container}>
                     <View style={styles.imgContainer}>
-                        <TwicImg
-                            src="cat_1x1.jpg"
-                            ratio="none"
-                            style={styles.customImage}
-                            mode="cover"
-                        />
+                        <TwicImg src="cat_1x1.jpg" style={styles.customImage} mode="cover" />
+                        <Text> Test</Text>
                     </View>
                     <View style={styles.imgContainer}>
                         <TwicImg src="cat_1x1.jpg" ratio="16/9" mode="cover" />

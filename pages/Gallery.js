@@ -1,7 +1,7 @@
 import { Component } from 'react';
 import { ScrollView, StyleSheet, View } from 'react-native';
-import TwicImg from '../components/TwicImg.js';
-//import {TwicImg} from '@twicpics/components-react-native';
+//import TwicImg from '../components/TwicImg.js';
+import {TwicImg} from '@twicpics/components-react-native';
 
 const seed = [
     {
@@ -228,10 +228,11 @@ class Gallery extends Component {
                                 ratio="3/4"
                                 mode="cover"
                                 focus="bottom"
+                                step="20"
                                 style={[
                                     styles.image,
                                     {
-                                        width: i % 2 === 1 ? 120 : 100,
+                                        width: i % 2 === 1 ? 120 : 100
                                     }
                                 ]}
                                 onLoadStart={() => {
