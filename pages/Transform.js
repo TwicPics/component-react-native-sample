@@ -37,7 +37,8 @@ const styles = StyleSheet.create({
         marginTop: 20
     },
     customImage: {
-        height: 100
+        height: 100,
+        backgroundColor:`#FF0000`
     },
     container: {
         padding: 20

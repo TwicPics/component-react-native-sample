@@ -9,13 +9,15 @@ const Basic = () => {
                 <View style={styles.container}>
                     <View style={styles.imgContainer}>
                         <TwicImg src="cat_1x1.jpg" style={styles.customImage} mode="cover" />
-                        <Text> Test</Text>
+                        <Text>CLS Test</Text>
                     </View>
                     <View style={styles.imgContainer}>
                         <TwicImg src="cat_1x1.jpg" ratio="16/9" mode="cover" />
+                        <Text>CLS Test</Text>
                     </View>
                     <View style={styles.imgContainer}>
                         <TwicImg src="cat_1x1.jpg" ratio="4/3" mode="contain" />
+                        <Text>CLS Test</Text>
                     </View>
                     <View style={styles.imgContainer}>
                         <TwicImg src="cat_1x1.jpg" ratio="16/9" mode="contain" />
@@ -65,11 +67,13 @@ const Basic = () => {
 const styles = StyleSheet.create({
     imgContainer: {
         width: '100%',
-        marginBottom: 20
+        marginBottom: 20,
+       
     },
     customImage: {
         width: '50%',
-        height: 100
+        height: 100,
+        backgroundColor:`#FF0000`
     },
     container: {
         padding: 20

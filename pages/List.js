@@ -198,7 +198,8 @@ const seed = [
 ];
 const images = [...seed, ...seed, ...seed, ...seed].map((e) => ({
     ...e,
-    id: Math.floor(Math.random() * 1000000)
+    id: Math.floor(Math.random() * 1000000),
+    url:`${e.url}?v=${Math.floor(Math.random() * 1000000)}`
 }));
 
 const renderItem = ({ item }) => {
@@ -208,7 +209,7 @@ const renderItem = ({ item }) => {
                 padding: 5
             }}
         >
-            <TwicImg src={item.url} ratio="1" mode="cover" focus="auto" />
+            <TwicImg src={item.url} ratio="1" mode="cover" />
         </View>
     );
 };

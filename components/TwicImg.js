@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Image, Text, StyleSheet } from 'react-native';
+import { Animated, View, Image, Text, StyleSheet } from 'react-native';
 
 import {
     parseAlt,
@@ -34,18 +34,35 @@ const TwicWrapper = (props) => {
 
     const size = computeSize(width, height, ratio);
     const computedSrc =
-        size.width && computeSrc(anchor, focus, mode, preTransform, size, src, step);
-    console.log('computedSrc', computedSrc);
+        size.width && computeSrc(anchor, focus, mode, preTransform, size, src, step, false);
+    const computedPreview = size.width && computeSrc(anchor, focus, mode, preTransform, size, src, step, true);
+
+    let imageTransition = new Animated.Value(0);
+
+     const onImage = () => {
+         Animated.timing(imageTransition, {
+      toValue: 1,
+    }).start();
+    }
+
+    console.log('computedSrc', computedSrc, computedPreview);
     if (computedSrc) {
         return (
             <View style={computeWrapperStyle(size, styles)}>
-                <Image
+                {computedPreview ? 
+               <Image
+                    accessibilityLabel={computeAlt(alt, src)}
+                    blurRadius={5}
+                    source={{ uri: computedPreview }}
+                    resizeMode='stretch'
+                    style={styles.img}
+                /> : ``}
+                <Animated.Image
                     accessibilityLabel={computeAlt(alt, src)}
                     source={{ uri: computedSrc }}
                     resizeMode={mode}
-                    style={styles.img}
-                    onLoadStart={props.onLoadStart}
-                    onLoadEnd={props.onLoadEnd}
+                    style={[styles.img, {opacity:imageTransition}]}
+                    onLoad={onImage}
                 />
                 {config.debug && (
                     <View style={styles.debug}>
@@ -108,8 +125,6 @@ const styles = StyleSheet.create({
     layout: {
         overflow: `hidden`,
         width: '100%',
-
-        backgroundColor: '#FF0000'
     },
     wrapper: {
         overflow: `hidden`,

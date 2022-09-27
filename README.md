@@ -34,7 +34,6 @@ installTwicPics( {
 
 ## your-page-or-component.js
 
-Add the import part
 
 ```jsx
 // this component will be used in place of an img element.

@@ -22,6 +22,7 @@ const Mode = () => {
                             src="cat_1x1.jpg"
                             ratio="4/3"
                             mode={mode}
+                            placeholder="preview"
                             style={styles.customImage}
                         />
                     </View>
@@ -36,7 +37,8 @@ const styles = StyleSheet.create({
         marginTop: 20
     },
     customImage: {
-        height: 100
+        height: 100,
+        backgroundColor:`#ff0000`
     },
     container: {
         padding: 20

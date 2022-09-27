@@ -47,11 +47,19 @@ export const computeSize = (width, height, ratio) => {
 const rNoCatchAll = /^v[0-9]+(?:\/|$)|^(rel:)/;
 const rPath = /^(?:image:)?(\/*)(.*)$/;
 const rQuery = /\?/;
-export const computeSrc = (anchor, focus, mode = `cover`, preTransform = ``, size, src, step) => {
-    const { w, h } = actualSize(size, step);
+export const computeSrc = (anchor, focus, mode = `cover`, preTransform = ``, size, src, step, preview) => {
+    let { w, h } = actualSize(size, step);
     const [, , path] = rPath.exec(src);
     const noCatchAll = rNoCatchAll.exec(path);
     const noQuery = !rQuery.test(path);
+
+    if ( preview ) {
+        const actualRatio = w / h;
+        const downgradeRate = 900 / (w * h);
+        w = Math.max(1,Math.floor(w * Math.sqrt(downgradeRate)));
+        h = Math.max(1,Math.floor(w / actualRatio));
+        console.log("new", w, h, w * h); 
+    }
 
     const { debug, domain } = config;
     const transform = `${computePreTransform(anchor, focus, mode, preTransform)}${mode}=${w}x${h}`;

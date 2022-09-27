@@ -17,7 +17,8 @@ import Transform from './pages/Transform.js';
 installTwicPics({
     domain: `https://demo.twic.pics`,
     step: 100,
-    debug: false
+    debug: false,
+    maxDPR:2,
 });
 
 const Stack = createNativeStackNavigator();
