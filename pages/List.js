@@ -217,7 +217,7 @@ const renderItem = ({ item }) => {
 const List = () => {
     return (
         <SafeAreaView style={styles.container}>
-            <FlatList data={images} renderItem={renderItem} keyExtractor={(item) => item.id} />
+            <FlatList data={images} renderItem={renderItem} keyExtractor={(item) => item.id}/>
         </SafeAreaView>
     );
 };
