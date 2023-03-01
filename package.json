@@ -13,19 +13,19 @@
         "format": "prettier --ignore-path .gitignore --write --plugin-search-dir=. ."
     },
     "dependencies": {
-        "@expo/webpack-config": "^0.17.0",
+        "@expo/webpack-config": "^18.0.1",
         "@react-navigation/native": "^6.0.13",
         "@react-navigation/native-stack": "^6.9.0",
         "@twicpics/components": "latest",
-        "expo": "46.0.10",
+        "expo": "48.0.4",
         "expo-cli": "^6.0.5",
         "expo-status-bar": "~1.4.0",
-        "react": "18.0.0",
-        "react-dom": "18.0.0",
-        "react-native": "0.69.5",
+        "react": "18.2.0",
+        "react-dom": "18.2.0",
+        "react-native": "0.71.3",
         "react-native-on-layout": "^2.0.2",
-        "react-native-safe-area-context": "4.3.1",
-        "react-native-screens": "~3.15.0",
+        "react-native-safe-area-context": "4.5.0",
+        "react-native-screens": "~3.20.0",
         "react-native-web": "^0.18.9"
     },
     "devDependencies": {

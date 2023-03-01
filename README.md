@@ -1,8 +1,9 @@
-# TwicPics React-Native Components Sample
+# TwicPics React Native Components Sample
 
-This is a sample React Native project for testing the [`@twicpics/components/react-native`](https://www.npmjs.com/package/@twicpics/components/react-native)
+This project is a demonstration project of [TwicPics Components](https://www.twicpics.com/docs/components/next?utm_source=github&utm_medium=organic&utm_campaign=components) using [React Native](https://reactnative.dev/).
 
 This project uses [`Expo`](https://expo.dev/) which will allow you to launch a server for the `web`, a native `IOS` or `android` app.
+
 Execution on a mobile device is possible via [`ExpoGo`](https://expo.dev/client).
 
 ## How to build
@@ -36,12 +37,16 @@ With [TwicPics](https://www.twicpics.com/?utm_source=github&utm_medium=organic&u
 
 TwicPics Components is a **collection of web components** that make it dead easy to unleash the power of [TwicPics](https://www.twicpics.com/?utm_source=github&utm_medium=organic&utm_campaign=components) in your own projects.
 
-Basically, TwicPics component replace `img` tags. It greatly and transparently optimize your CLS by providing LQIP (Low-Quality Image Placeholders) and Lazy Loading out of the box.
+Basically, TwicPics component for React Native replace `Image` tag.
 
 Simply replace this:
 
 ```html
-<img src="https://assets.twicpics.com/examples/football.jpg" />
+<Image
+    source={{
+        uri: 'https://assets.twicpics.com/examples/football.jpg',
+    }}
+/>
 ```
 
 With this:
@@ -50,7 +55,7 @@ With this:
 <TwicImg src="https://assets.twicpics.com/examples/football.jpg" />
 ```
 
-Thanks to the open source [TwicPics](https://www.twicpics.com/?utm_source=github&utm_medium=organic&utm_campaign=components) Components, delivering responsive images in your [Next.js](https://nextjs.org/) projects has never been easier.
+Thanks to the open source [TwicPics Components](https://www.twicpics.com/docs/components/react-native) delivering images in your [React Native](https://reactnative.dev/) projects has never been easier.
 
 ## Installation
 
@@ -75,6 +80,8 @@ installTwicPics( {
 
 ### Usage
 
+For more information, see the complete documentation [here](https://github.com/TwicPics/components/blob/main/documentation/react-native.md).
+
 #### your-page-or-component.js
 
 ```jsx
@@ -96,3 +103,14 @@ return (
     />
 )
 ```
+
+## Questions and feedback
+
+Fell free to submit an [issue](https://github.com/TwicPics/components/issues) or to ask us anything by dropping an email at [support@twic.pics](mailto:support@twic.pics).
+
+## Licence
+
+[![License][license-image]][license-url]
+
+[license-image]: https://img.shields.io/npm/l/@twicpics/components.svg?style=flat-square
+[license-url]: https://raw.githubusercontent.com/twicpics/components/master/LICENSE
