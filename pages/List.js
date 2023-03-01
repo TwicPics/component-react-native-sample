@@ -1,6 +1,8 @@
+/* eslint-disable no-magic-numbers */
+/* eslint-disable max-lines */
+// eslint-disable-next-line no-shadow
 import { SafeAreaView, StatusBar, View, FlatList, StyleSheet } from 'react-native';
-//import TwicImg from '../components/TwicImg.js';
-import {TwicImg} from '@twicpics/components-react-native';
+import { TwicImg } from '@twicpics/components/react-native';
 
 const seed = [
     {
@@ -199,28 +201,25 @@ const seed = [
 const images = [...seed, ...seed, ...seed, ...seed].map((e) => ({
     ...e,
     id: Math.floor(Math.random() * 1000000),
-    url:`${e.url}?v=${Math.floor(Math.random() * 1000000)}`
+    url: `${e.url}?v=${Math.floor(Math.random() * 1000000)}`
 }));
 
-const renderItem = ({ item }) => {
-    return (
-        <View
-            style={{
-                padding: 5
-            }}
-        >
-            <TwicImg src={item.url} ratio="1" mode="cover" />
-        </View>
-    );
-};
+const renderItem = ({ item }) => (
+    <View
+        style={{
+            padding: 5
+        }}
+    >
+        <TwicImg src={item.url} ratio="1" mode="cover" placeholder="maincolor" />
+    </View>
+);
 
-const List = () => {
-    return (
-        <SafeAreaView style={styles.container}>
-            <FlatList data={images} renderItem={renderItem} keyExtractor={(item) => item.id}/>
-        </SafeAreaView>
-    );
-};
+const List = () => (
+    // eslint-disable-next-line no-use-before-define
+    <SafeAreaView style={styles.container}>
+        <FlatList data={images} renderItem={renderItem} keyExtractor={(item) => item.id} />
+    </SafeAreaView>
+);
 const styles = StyleSheet.create({
     container: {
         flex: 1,

@@ -1,7 +1,8 @@
+/* eslint-disable no-use-before-define */
 import { useState } from 'react';
-import { Button, ScrollView, StyleSheet, Text, View } from 'react-native';
-//import TwicImg from '../components/TwicImg.js';
-import {TwicImg} from '@twicpics/components-react-native';
+// eslint-disable-next-line no-shadow
+import { Button, ScrollView, StyleSheet, View } from 'react-native';
+import { TwicImg } from '@twicpics/components/react-native';
 
 const modes = [`cover`, `contain`];
 let indiceMode = 0;
@@ -38,7 +39,7 @@ const styles = StyleSheet.create({
     },
     customImage: {
         height: 100,
-        backgroundColor:`#ff0000`
+        backgroundColor: `#ff0000`
     },
     container: {
         padding: 20

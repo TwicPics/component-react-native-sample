@@ -1,12 +1,14 @@
+/* eslint-disable no-use-before-define */
 import { useState } from 'react';
-import { Button, ScrollView, StyleSheet, Text, View } from 'react-native';
-//import TwicImg from '../components/TwicImg.js';
-import {TwicImg} from '@twicpics/components-react-native';
+// eslint-disable-next-line no-shadow
+import { Button, ScrollView, StyleSheet, View } from 'react-native';
+import { TwicImg } from '@twicpics/components/react-native';
 
 const focuses = [`50px50p`, `auto`, `right`];
 let indiceFocus = 0;
 
 const Focus = () => {
+    // eslint-disable-next-line no-shadow
     const [focus, setFocus] = useState(focuses[indiceFocus]);
     const changeFocus = () => {
         indiceFocus = (indiceFocus + 1) % focuses.length;

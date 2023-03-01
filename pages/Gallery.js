@@ -1,7 +1,11 @@
+/* eslint-disable no-magic-numbers */
+/* eslint-disable no-mixed-operators */
+/* eslint-disable no-use-before-define */
+/* eslint-disable max-lines */
 import { Component } from 'react';
+// eslint-disable-next-line no-shadow
 import { ScrollView, StyleSheet, View } from 'react-native';
-//import TwicImg from '../components/TwicImg.js';
-import {TwicImg} from '@twicpics/components-react-native';
+import { TwicImg } from '@twicpics/components/react-native';
 
 const seed = [
     {
@@ -200,51 +204,41 @@ const seed = [
 const images = [...seed, ...seed];
 
 class Gallery extends Component {
-    constructor(props) {
-        super(props);
-    }
-
+    // eslint-disable-next-line class-methods-use-this
     render() {
         return (
             <ScrollView
                 style={styles.imagesContainer}
                 contentContainerStyle={{
-                    flexDirection: 'row',
-                    flexWrap: 'wrap',
-                    justifyContent: 'center'
+                    flexDirection: `row`,
+                    flexWrap: `wrap`,
+                    justifyContent: `center`
                 }}
                 horizontal={false}
             >
-                {images.map((image, i) => {
-                    return (
-                        <View
-                            style={{
-                                padding: 5
-                            }}
-                            key={i}
-                        >
-                            <TwicImg
-                                src={image.url}
-                                ratio="3/4"
-                                mode="cover"
-                                focus="bottom"
-                                step="20"
-                                style={[
-                                    styles.image,
-                                    {
-                                        width: i % 2 === 1 ? 120 : 100
-                                    }
-                                ]}
-                                onLoadStart={() => {
-                                    //this.setState({"loading":true});
-                                }}
-                                onLoadEnd={() => {
-                                    //this.setState({"loading":false});
-                                }}
-                            />
-                        </View>
-                    );
-                })}
+                {images.map((image, i) => (
+                    <View
+                        style={{
+                            padding: 5
+                        }}
+                        key={i}
+                    >
+                        <TwicImg
+                            src={image.url}
+                            ratio="3/4"
+                            mode="cover"
+                            focus="bottom"
+                            step="20"
+                            style={[
+                                styles.image,
+                                {
+                                    width: i % 2 === 1 ? 120 : 100
+                                }
+                            ]}
+                            transition="zoom"
+                        />
+                    </View>
+                ))}
             </ScrollView>
         );
     }
@@ -254,10 +248,10 @@ const styles = StyleSheet.create({
     imagesContainer: {
         marginHorizontal: 4,
         marginTop: 30,
-        width: '100%'
+        width: `100%`
     },
     image: {
-        shadowColor: 'black',
+        shadowColor: `black`,
         shadowOffset: {
             width: -5,
             height: 5

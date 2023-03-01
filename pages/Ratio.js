@@ -1,7 +1,8 @@
+/* eslint-disable no-use-before-define */
 import { useState } from 'react';
-import { Button, ScrollView, StyleSheet, Text, View } from 'react-native';
-//import TwicImg from '../components/TwicImg.js';
-import {TwicImg} from '@twicpics/components-react-native';
+// eslint-disable-next-line no-shadow
+import { Button, ScrollView, StyleSheet, View } from 'react-native';
+import { TwicImg } from '@twicpics/components/react-native';
 
 const ratios = [`1`, `4/3`, `16/9`, `3/4`, `none`];
 let indiceRatio = 0;
@@ -19,10 +20,11 @@ const Ratio = () => {
                     <Button title="Change ratio" onPress={() => changeRatio()} />
                     <View style={styles.imgContainer}>
                         <TwicImg
-                            src="cat_1x1.jpg"
+                            src="football.jpg"
                             ratio={ratio}
-                            mode="cover"
+                            mode="contain"
                             style={styles.customImage}
+                            transitionDuration="200"
                         />
                     </View>
                 </View>
@@ -36,7 +38,8 @@ const styles = StyleSheet.create({
         marginTop: 20
     },
     customImage: {
-        height: 100
+        height: 100,
+        backgroundColor: `#FF0000`
     },
     container: {
         padding: 20

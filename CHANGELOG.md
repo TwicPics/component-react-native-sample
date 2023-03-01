@@ -8,12 +8,11 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## [Unreleased]
 
-
 ## [0.1.0-alpha-0] - 2021-07-27
 
 ### Added
 
-- Prototype version for testing `TwicImg` React Native Component.
+-   Prototype version for testing `TwicImg` React Native Component.
 
 [Unreleased]: https://github.com/TwicPics/components/compare/main...dev
 [0.0.1-alpha-0]: https://github.com/TwicPics/components/releases/tag/0.1.0-alpha-0
